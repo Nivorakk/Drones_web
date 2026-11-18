@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Altavía Drones | Servicios aéreos y venta de drones profesionales</title>
+  <meta name="description" content="Altavía Drones: servicios profesionales con drones (fotografía aérea, topografía, inspección, agricultura de precisión, formación) y tienda de drones y accesorios." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%230b1220'/><path d='M9 21 16 8l7 13h-4l-3-6-3 6z' fill='%2322d3ee'/></svg>" />
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="container nav">
+      <a href="#inicio" class="logo" aria-label="Altavía Drones, inicio">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="currentColor" opacity=".12"/><path d="M9 21 16 8l7 13h-4l-3-6-3 6z" fill="currentColor"/></svg>
+        <span>Altavía<strong>Drones</strong></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#presupuesto">Presupuesto</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Cambiar tema">
+          <svg class="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5"/><path d="M12 1.5v3M12 19.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1.5 12h3M19.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </button>
+        <button class="icon-btn cart-btn" id="cartOpen" aria-label="Abrir carrito">
+          <svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.7a1.5 1.5 0 0 0 1.5-1.1L21 8H6.2"/><circle cx="9.5" cy="20" r="1.3"/><circle cx="17.5" cy="20" r="1.3"/></svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+        <button class="icon-btn menu-btn" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="grid-lines"></div>
+        <div class="glow g1"></div><div class="glow g2"></div>
+      </div>
+      <div class="container hero-inner">
+        <div class="hero-text reveal">
+          <span class="eyebrow"><span class="dot"></span> Operador certificado AESA · Categoría específica</span>
+          <h1>Elevamos tu negocio <span class="grad">a otra altura</span></h1>
+          <p class="lead">Servicios aéreos profesionales y los drones más avanzados del mercado. Desde Valencia, volamos para más de 450 empresas en toda España.</p>
+          <div class="hero-cta">
+            <a href="#servicios" class="btn btn-primary">Ver servicios</a>
+            <a href="#tienda" class="btn btn-ghost">Comprar drones →</a>
+          </div>
+          <ul class="hero-stats">
+            <li><strong data-count="12800">0</strong><span>vuelos realizados</span></li>
+            <li><strong data-count="450" data-suffix="+">0</strong><span>clientes empresa</span></li>
+            <li><strong data-count="98" data-suffix="%">0</strong><span>satisfacción</span></li>
+          </ul>
+        </div>
+        <div class="hero-visual reveal" id="heroVisual">
+          <div class="hud">
+            <div class="hud-row"><span>ALT</span><b id="hudAlt">120.0 m</b></div>
+            <div class="hud-row"><span>VEL</span><b id="hudSpd">42 km/h</b></div>
+            <div class="hud-row"><span>BAT</span><b id="hudBat">87%</b></div>
+            <div class="hud-row"><span>GPS</span><b>22 sat</b></div>
+          </div>
+          <div class="hero-drone" id="heroDrone"></div>
+          <div class="hero-shadow"></div>
+          <div class="radar"><span></span></div>
+        </div>
+      </div>
+      <div class="container trust reveal">
+        <p>Confían en nosotros</p>
+        <div class="logos">
+          <span>IBERSOLAR</span><span>AgroLevante</span><span>CONSTRUMED</span><span>Puerto&nbsp;Norte</span><span>VitiValencia</span><span>RedEléctrica Sur</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICIOS ===== -->
+    <section class="section" id="servicios">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">Servicios</span>
+          <h2>Soluciones aéreas para cada sector</h2>
+          <p>Pilotos certificados, equipos de última generación y entregables listos para usar. Pulsa en cada servicio para ver el detalle.</p>
+        </header>
+        <div class="service-tabs reveal" role="tablist" id="serviceFilter">
+          <button class="chip active" data-sector="all">Todos</button>
+          <button class="chip" data-sector="industria">Industria</button>
+          <button class="chip" data-sector="campo">Agricultura</button>
+          <button class="chip" data-sector="media">Audiovisual</button>
+          <button class="chip" data-sector="formacion">Formación</button>
+        </div>
+        <div class="services-grid" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===== PROCESO ===== -->
+    <section class="section alt">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">Cómo trabajamos</span>
+          <h2>De la idea al entregable en 4 pasos</h2>
+        </header>
+        <ol class="steps">
+          <li class="reveal"><span>01</span><h3>Consulta</h3><p>Analizamos tu necesidad y la normativa aplicable a la zona de vuelo.</p></li>
+          <li class="reveal"><span>02</span><h3>Planificación</h3><p>Gestionamos permisos AESA/ENAIRE y diseñamos la misión.</p></li>
+          <li class="reveal"><span>03</span><h3>Vuelo</h3><p>Operación segura con pilotos certificados y seguro de 3 M€.</p></li>
+          <li class="reveal"><span>04</span><h3>Entrega</h3><p>Datos procesados en nuestra plataforma en menos de 72 h.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== PRESUPUESTO ===== -->
+    <section class="section" id="presupuesto">
+      <div class="container quote">
+        <div class="quote-intro reveal">
+          <span class="kicker">Calculadora</span>
+          <h2>Calcula tu presupuesto al instante</h2>
+          <p>Estimación orientativa sin compromiso. Te enviaremos una propuesta cerrada en menos de 24 horas laborables.</p>
+          <ul class="checks">
+            <li>Permisos y coordinación incluidos</li>
+            <li>Seguro de responsabilidad civil 3 M€</li>
+            <li>Datos en la nube durante 12 meses</li>
+          </ul>
+        </div>
+        <form class="quote-card reveal" id="quoteForm">
+          <label class="field">
+            <span>Tipo de servicio</span>
+            <select id="qService"></select>
+          </label>
+          <label class="field">
+            <span id="qUnitLabel">Cantidad</span>
+            <div class="range-row">
+              <input type="range" id="qAmount" min="1" max="100" value="10" />
+              <output id="qAmountOut">10</output>
+            </div>
+          </label>
+          <fieldset class="field">
+            <legend>Extras</legend>
+            <label class="check"><input type="checkbox" value="urgente" data-mult="0.25" /> Entrega urgente (24 h) <em>+25%</em></label>
+            <label class="check"><input type="checkbox" value="informe" data-add="180" /> Informe técnico firmado <em>+180 €</em></label>
+            <label class="check"><input type="checkbox" value="nocturno" data-mult="0.15" /> Vuelo nocturno / fin de semana <em>+15%</em></label>
+          </fieldset>
+          <label class="field">
+            <span>Provincia</span>
+            <select id="qZone">
+              <option value="0">Comunidad Valenciana (sin desplazamiento)</option>
+              <option value="120">Resto de península</option>
+              <option value="350">Baleares / Canarias</option>
+            </select>
+          </label>
+          <div class="quote-total">
+            <div>
+              <span>Total estimado (IVA no incluido)</span>
+              <strong id="qTotal">0 €</strong>
+            </div>
+            <button type="button" class="btn btn-primary" id="qRequest">Solicitar propuesta</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== TIENDA ===== -->
+    <section class="section alt" id="tienda">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">Tienda</span>
+          <h2>Drones y accesorios</h2>
+          <p>Distribuidor oficial con 2 años de garantía, envío gratuito desde 300 € y financiación al 0% hasta 12 meses.</p>
+        </header>
+        <div class="shop-toolbar reveal">
+          <div class="search">
+            <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+            <input type="search" id="shopSearch" placeholder="Buscar drones o accesorios…" aria-label="Buscar productos" />
+          </div>
+          <div class="chips" id="shopCats">
+            <button class="chip active" data-cat="all">Todo</button>
+            <button class="chip" data-cat="consumo">Consumo</button>
+            <button class="chip" data-cat="profesional">Profesional</button>
+            <button class="chip" data-cat="industrial">Industrial</button>
+            <button class="chip" data-cat="fpv">FPV</button>
+            <button class="chip" data-cat="accesorios">Accesorios</button>
+          </div>
+          <div class="toolbar-right">
+            <label class="price-filter">Hasta <output id="priceOut">20.000 €</output>
+              <input type="range" id="priceMax" min="50" max="20000" step="50" value="20000" />
+            </label>
+            <select id="shopSort" aria-label="Ordenar">
+              <option value="featured">Destacados</option>
+              <option value="price-asc">Precio: menor a mayor</option>
+              <option value="price-desc">Precio: mayor a menor</option>
+              <option value="rating">Mejor valorados</option>
+            </select>
+          </div>
+        </div>
+        <p class="results-count" id="resultsCount"></p>
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ===== NOSOTROS ===== -->
+    <section class="section" id="nosotros">
+      <div class="container about">
+        <div class="about-visual reveal">
+          <div class="about-card big">
+            <strong data-count="11">0</strong><span>años de experiencia</span>
+          </div>
+          <div class="about-card">
+            <strong data-count="34">0</strong><span>pilotos certificados</span>
+          </div>
+          <div class="about-card">
+            <strong data-count="86">0</strong><span>drones en flota</span>
+          </div>
+          <div class="about-card accent">
+            <strong>0</strong><span>incidentes graves desde 2015</span>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <span class="kicker">Sobre Altavía</span>
+          <h2>Pasión por volar, obsesión por los datos</h2>
+          <p>Nacimos en 2015 en el Parque Tecnológico de Paterna (Valencia) con un único dron y una idea: que cualquier empresa pudiera acceder a la tecnología aérea sin complicaciones.</p>
+          <p>Hoy somos un equipo de 58 personas entre pilotos, ingenieros, analistas GIS y técnicos de taller. Disponemos de centro de formación propio homologado por AESA y servicio técnico oficial de las principales marcas.</p>
+          <div class="badges">
+            <span>ISO 9001</span><span>ISO 14001</span><span>Operador AESA</span><span>ATO homologada</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIOS ===== -->
+    <section class="section alt">
+      <div class="container">
+        <header class="section-head reveal">
+          <span class="kicker">Testimonios</span>
+          <h2>Lo que dicen nuestros clientes</h2>
+        </header>
+        <div class="slider reveal" id="slider">
+          <div class="slides" id="slides"></div>
+          <div class="slider-nav">
+            <button class="icon-btn" id="prevSlide" aria-label="Anterior">‹</button>
+            <div class="dots" id="dots"></div>
+            <button class="icon-btn" id="nextSlide" aria-label="Siguiente">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section" id="faq">
+      <div class="container narrow">
+        <header class="section-head reveal">
+          <span class="kicker">FAQ</span>
+          <h2>Preguntas frecuentes</h2>
+        </header>
+        <div class="faq" id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="section alt" id="contacto">
+      <div class="container contact">
+        <div class="contact-info reveal">
+          <span class="kicker">Contacto</span>
+          <h2>Hablemos de tu proyecto</h2>
+          <p>Nuestro equipo responde en menos de 4 horas en horario laboral.</p>
+          <ul class="contact-list">
+            <li><b>Dirección</b>Av. Juan de la Cierva 27, 46980 Paterna (Valencia)</li>
+            <li><b>Teléfono</b>+34 960 123 456</li>
+            <li><b>Email</b>hola@altavia-drones.es</li>
+            <li><b>Horario</b>L–V 8:00–19:00 · S 9:00–14:00</li>
+          </ul>
+        </div>
+        <form class="contact-form reveal" id="contactForm" novalidate>
+          <div class="two">
+            <label class="field"><span>Nombre *</span><input name="name" required minlength="2" autocomplete="name" /><small></small></label>
+            <label class="field"><span>Empresa</span><input name="company" autocomplete="organization" /><small></small></label>
+          </div>
+          <div class="two">
+            <label class="field"><span>Email *</span><input name="email" type="email" required autocomplete="email" /><small></small></label>
+            <label class="field"><span>Teléfono</span><input name="phone" type="tel" pattern="^[+0-9 ]{9,15}$" autocomplete="tel" /><small></small></label>
+          </div>
+          <label class="field"><span>Asunto</span>
+            <select name="topic" id="contactTopic">
+              <option>Solicitar servicio</option>
+              <option>Compra de drones</option>
+              <option>Formación y licencias</option>
+              <option>Servicio técnico</option>
+              <option>Otro</option>
+            </select>
+          </label>
+          <label class="field"><span>Mensaje *</span><textarea name="message" rows="4" required minlength="10"></textarea><small></small></label>
+          <label class="check"><input type="checkbox" name="privacy" required /> Acepto la política de privacidad *</label>
+          <button class="btn btn-primary full" type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#inicio" class="logo">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="currentColor" opacity=".12"/><path d="M9 21 16 8l7 13h-4l-3-6-3 6z" fill="currentColor"/></svg>
+          <span>Altavía<strong>Drones</strong></span>
+        </a>
+        <p>Servicios aéreos profesionales y venta de drones desde 2015.</p>
+        <form class="newsletter" id="newsletter">
+          <input type="email" placeholder="Tu email" required aria-label="Email para newsletter" />
+          <button class="btn btn-primary">Suscribirme</button>
+        </form>
+      </div>
+      <div>
+        <h4>Servicios</h4>
+        <a href="#servicios">Fotografía aérea</a><a href="#servicios">Topografía</a><a href="#servicios">Inspecciones</a><a href="#servicios">Agricultura</a>
+      </div>
+      <div>
+        <h4>Tienda</h4>
+        <a href="#tienda">Drones de consumo</a><a href="#tienda">Profesional</a><a href="#tienda">Industrial</a><a href="#tienda">Accesorios</a>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <a href="#nosotros">Sobre nosotros</a><a href="#faq">FAQ</a><a href="#contacto">Contacto</a><a href="#contacto">Trabaja con nosotros</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Altavía Drones S.L. · CIF B-00000000 (ficticio)</span>
+      <span>Aviso legal · Privacidad · Cookies</span>
+    </div>
+  </footer>
+
+  <!-- ===== CART DRAWER ===== -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="cart" aria-label="Carrito" aria-hidden="true">
+    <div class="drawer-head">
+      <h3>Tu carrito</h3>
+      <button class="icon-btn" id="cartClose" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div class="drawer-body" id="cartItems"></div>
+    <div class="drawer-foot">
+      <div class="ship-bar"><div id="shipProgress"></div></div>
+      <p class="ship-msg" id="shipMsg"></p>
+      <div class="sum-row"><span>Subtotal</span><b id="cartSubtotal">0 €</b></div>
+      <div class="sum-row"><span>Envío</span><b id="cartShipping">0 €</b></div>
+      <div class="sum-row total"><span>Total (IVA incl.)</span><b id="cartTotal">0 €</b></div>
+      <button class="btn btn-primary full" id="checkoutBtn">Finalizar compra</button>
+    </div>
+  </aside>
+
+  <!-- ===== COMPARE BAR ===== -->
+  <div class="compare-bar" id="compareBar">
+    <div class="container compare-inner">
+      <div class="compare-items" id="compareItems"></div>
+      <div class="compare-actions">
+        <button class="btn btn-ghost sm" id="compareClear">Limpiar</button>
+        <button class="btn btn-primary sm" id="compareOpen">Comparar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL ===== -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="icon-btn modal-close" id="modalClose" aria-label="Cerrar">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <button class="to-top" id="toTop" aria-label="Volver arriba">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
