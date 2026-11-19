@@ -5,6 +5,8 @@
   <img src="capturas/portada-movil.png" alt="Portada de la web de Altavía Drones en móvil" width="178">
 </p>
 
+<p align="center"><strong><a href="https://nivorakk.github.io/Drones_web/">Ver la web</a></strong></p>
+
 Página web de ejemplo (datos ficticios) de una empresa de **servicios con drones** y **venta de drones y accesorios**.
 
 Abre `index.html` en el navegador; no necesita instalación ni servidor.
